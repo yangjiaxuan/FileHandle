@@ -10,6 +10,7 @@ def createFile(filename):
     if not os.path.exists(filename):
         fp = open(filename, 'w+') # 创建文件
         fp.close()# 关闭
+        print("创建新的文件:%s"%filename)
 
 def removeFile(filename):
     if os.path.exists(filename):
@@ -31,8 +32,8 @@ def saveDictionaryAsJsonString(filename, contents):
 def addNewLine(filename, contents):
     
     createFile(fileUrl)
-    
-    fp = open(filename, 'w')
+    fp = open(filename, 'a')
+    fp.write("\r\n")
     fp.write(contents)
     fp.close()
 
